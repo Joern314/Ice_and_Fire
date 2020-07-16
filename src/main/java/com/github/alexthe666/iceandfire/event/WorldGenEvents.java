@@ -198,7 +198,7 @@ public class WorldGenEvents implements IWorldGenerator {
                 }
             }
         }
-        if (IceAndFire.CONFIG.spawnSeaSerpents && BiomeDictionary.hasType(world.getBiome(height), Type.WATER) && random.nextInt(IceAndFire.CONFIG.seaSerpentSpawnChance + 1) == 0) {
+        if (IceAndFire.CONFIG.spawnSeaSerpents && true && random.nextInt(IceAndFire.CONFIG.seaSerpentSpawnChance + 1) == 0) {
             BlockPos pos = new BlockPos(x + random.nextInt(10) - 5, 20 + random.nextInt(40), z + random.nextInt(10) - 5);
             if (world.getBlockState(pos).getMaterial() == Material.WATER) {
                 EntitySeaSerpent serpent = new EntitySeaSerpent(world);

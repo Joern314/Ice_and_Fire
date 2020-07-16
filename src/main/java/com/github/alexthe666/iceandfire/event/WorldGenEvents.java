@@ -101,7 +101,7 @@ public class WorldGenEvents implements IWorldGenerator {
                 }
             }
         }
-        if (IceAndFire.CONFIG.generateSirenIslands && isFarEnoughFromSpawn(world, height) && BiomeDictionary.hasType(world.getBiome(height), Type.OCEAN) && !BiomeDictionary.hasType(world.getBiome(height), Type.COLD)
+        if (IceAndFire.CONFIG.generateSirenIslands && isFarEnoughFromSpawn(world, height) && BiomeDictionary.hasType(world.getBiome(height), Type.WATER) && !BiomeDictionary.hasType(world.getBiome(height), Type.COLD)
                 && random.nextInt(IceAndFire.CONFIG.generateSirenChance + 1) == 0 && !isDimensionBlacklisted(world.provider.getDimension(), false) && (lastSirenIsland == null || lastSirenIsland.distanceSq(height) >= spawnCheck)) {
             SIREN_ISLAND.generate(world, random, height);
             lastSirenIsland = height;
@@ -185,7 +185,7 @@ public class WorldGenEvents implements IWorldGenerator {
                 }
             }
         }
-        if (IceAndFire.CONFIG.spawnHippocampus && BiomeDictionary.hasType(world.getBiome(height), Type.OCEAN) && random.nextInt(IceAndFire.CONFIG.hippocampusSpawnChance + 1) == 0) {
+        if (IceAndFire.CONFIG.spawnHippocampus && BiomeDictionary.hasType(world.getBiome(height), Type.WATER) && random.nextInt(IceAndFire.CONFIG.hippocampusSpawnChance + 1) == 0) {
             for (int i = 0; i < random.nextInt(5); i++) {
                 BlockPos pos = new BlockPos(x + random.nextInt(10) - 5, 20 + random.nextInt(40), z + random.nextInt(10) - 5);
                 if (world.getBlockState(pos).getMaterial() == Material.WATER) {
@@ -198,7 +198,7 @@ public class WorldGenEvents implements IWorldGenerator {
                 }
             }
         }
-        if (IceAndFire.CONFIG.spawnSeaSerpents && BiomeDictionary.hasType(world.getBiome(height), Type.OCEAN) && random.nextInt(IceAndFire.CONFIG.seaSerpentSpawnChance + 1) == 0) {
+        if (IceAndFire.CONFIG.spawnSeaSerpents && BiomeDictionary.hasType(world.getBiome(height), Type.WATER) && random.nextInt(IceAndFire.CONFIG.seaSerpentSpawnChance + 1) == 0) {
             BlockPos pos = new BlockPos(x + random.nextInt(10) - 5, 20 + random.nextInt(40), z + random.nextInt(10) - 5);
             if (world.getBlockState(pos).getMaterial() == Material.WATER) {
                 EntitySeaSerpent serpent = new EntitySeaSerpent(world);
